@@ -440,16 +440,18 @@ class Calendar extends React.Component {
 
      day: PropTypes.shape({
        header: elementType,
-       event: elementType
+       event: elementType,
+       timeGutter: elementType,
      }),
      week: PropTypes.shape({
        header: elementType,
-       event: elementType
+       event: elementType,
+       timeGutter: elementType,
      }),
      month: PropTypes.shape({
        header: elementType,
        dateHeader: elementType,
-       event: elementType
+       event: elementType,
      })
    }),
 

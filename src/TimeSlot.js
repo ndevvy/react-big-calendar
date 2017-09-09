@@ -7,6 +7,7 @@ import { elementType } from './utils/propTypes'
 export default class TimeSlot extends Component {
   static propTypes = {
     dayWrapperComponent: elementType,
+    timeGutterComponent: elementType,
     value: PropTypes.instanceOf(Date).isRequired,
     isNow: PropTypes.bool,
     showLabel: PropTypes.bool,
@@ -24,6 +25,7 @@ export default class TimeSlot extends Component {
   render() {
     const { value, slotPropGetter } = this.props;
     const Wrapper = this.props.dayWrapperComponent;
+    const TimeGutterComponent = this.props.timeGutterComponent;
     const { className, style } = (slotPropGetter && slotPropGetter(value)) || {};
 
     return (
@@ -38,7 +40,7 @@ export default class TimeSlot extends Component {
           )}
         >
         {this.props.showLabel &&
-          <span>{this.props.content}</span>
+            <TimeGutterComponent content={this.props.content} value={this.props.value}/>
         }
         </div>
       </Wrapper>
